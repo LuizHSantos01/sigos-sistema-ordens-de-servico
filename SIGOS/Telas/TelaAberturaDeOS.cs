@@ -16,5 +16,10 @@ namespace SIGOS.Telas
         {
             InitializeComponent();
         }
+
+        private void TelaAberturaDeOS_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
