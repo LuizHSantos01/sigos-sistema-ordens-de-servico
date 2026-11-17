@@ -34,8 +34,7 @@
             this.txtNomeRazaoSocial = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.cbTipoCliente = new System.Windows.Forms.ComboBox();
-            this.lblTipoCliente = new System.Windows.Forms.Label();
+            this.lblEnderecoCliente = new System.Windows.Forms.Label();
             this.txtCPFCNPJ = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtContatoTelefone = new System.Windows.Forms.TextBox();
@@ -44,6 +43,7 @@
             this.cbStatus = new System.Windows.Forms.ComboBox();
             this.btnLimparFormulario = new System.Windows.Forms.Button();
             this.btnSalvarCliente = new System.Windows.Forms.Button();
+            this.txtEnderecoCliente = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblDadosPessoaisEmpresa
@@ -97,25 +97,16 @@
             this.lblEmail.TabIndex = 3;
             this.lblEmail.Text = "E-mail:";
             // 
-            // cbTipoCliente
+            // lblEnderecoCliente
             // 
-            this.cbTipoCliente.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTipoCliente.FormattingEnabled = true;
-            this.cbTipoCliente.Location = new System.Drawing.Point(106, 347);
-            this.cbTipoCliente.Name = "cbTipoCliente";
-            this.cbTipoCliente.Size = new System.Drawing.Size(359, 28);
-            this.cbTipoCliente.TabIndex = 5;
-            // 
-            // lblTipoCliente
-            // 
-            this.lblTipoCliente.AutoSize = true;
-            this.lblTipoCliente.BackColor = System.Drawing.Color.Transparent;
-            this.lblTipoCliente.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoCliente.Location = new System.Drawing.Point(102, 324);
-            this.lblTipoCliente.Name = "lblTipoCliente";
-            this.lblTipoCliente.Size = new System.Drawing.Size(113, 20);
-            this.lblTipoCliente.TabIndex = 6;
-            this.lblTipoCliente.Text = "Tipo de Cliente:";
+            this.lblEnderecoCliente.AutoSize = true;
+            this.lblEnderecoCliente.BackColor = System.Drawing.Color.Transparent;
+            this.lblEnderecoCliente.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnderecoCliente.Location = new System.Drawing.Point(102, 324);
+            this.lblEnderecoCliente.Name = "lblEnderecoCliente";
+            this.lblEnderecoCliente.Size = new System.Drawing.Size(71, 20);
+            this.lblEnderecoCliente.TabIndex = 6;
+            this.lblEnderecoCliente.Text = "Endereço";
             // 
             // txtCPFCNPJ
             // 
@@ -200,6 +191,15 @@
             this.btnSalvarCliente.Text = "Salvar cliente";
             this.btnSalvarCliente.UseVisualStyleBackColor = false;
             // 
+            // txtEnderecoCliente
+            // 
+            this.txtEnderecoCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEnderecoCliente.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEnderecoCliente.Location = new System.Drawing.Point(106, 348);
+            this.txtEnderecoCliente.Name = "txtEnderecoCliente";
+            this.txtEnderecoCliente.Size = new System.Drawing.Size(359, 27);
+            this.txtEnderecoCliente.TabIndex = 15;
+            // 
             // TelaCadastroDeClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -207,6 +207,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(907, 498);
+            this.Controls.Add(this.txtEnderecoCliente);
             this.Controls.Add(this.btnSalvarCliente);
             this.Controls.Add(this.btnLimparFormulario);
             this.Controls.Add(this.lblStatus);
@@ -215,8 +216,7 @@
             this.Controls.Add(this.lblContatoTelefone);
             this.Controls.Add(this.txtCPFCNPJ);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblTipoCliente);
-            this.Controls.Add(this.cbTipoCliente);
+            this.Controls.Add(this.lblEnderecoCliente);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.txtNomeRazaoSocial);
@@ -236,8 +236,7 @@
         private System.Windows.Forms.TextBox txtNomeRazaoSocial;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.ComboBox cbTipoCliente;
-        private System.Windows.Forms.Label lblTipoCliente;
+        private System.Windows.Forms.Label lblEnderecoCliente;
         private System.Windows.Forms.TextBox txtCPFCNPJ;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtContatoTelefone;
@@ -246,5 +245,6 @@
         private System.Windows.Forms.ComboBox cbStatus;
         private System.Windows.Forms.Button btnLimparFormulario;
         private System.Windows.Forms.Button btnSalvarCliente;
+        private System.Windows.Forms.TextBox txtEnderecoCliente;
     }
 }
