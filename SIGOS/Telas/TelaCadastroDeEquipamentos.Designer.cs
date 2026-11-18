@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaCadastroDeEquipamentos));
-            this.lblDadosPessoaisEmpresa = new System.Windows.Forms.Label();
+            this.lblDadosEquipamento = new System.Windows.Forms.Label();
             this.lblCliente = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -43,21 +43,21 @@
             this.btnLimparFormularioTecnico = new System.Windows.Forms.Button();
             this.btnSalvarTecnico = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblDadosPessoaisEmpresa
+            // lblDadosEquipamento
             // 
-            this.lblDadosPessoaisEmpresa.AutoSize = true;
-            this.lblDadosPessoaisEmpresa.BackColor = System.Drawing.Color.Transparent;
-            this.lblDadosPessoaisEmpresa.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDadosPessoaisEmpresa.Location = new System.Drawing.Point(102, 157);
-            this.lblDadosPessoaisEmpresa.Name = "lblDadosPessoaisEmpresa";
-            this.lblDadosPessoaisEmpresa.Size = new System.Drawing.Size(181, 20);
-            this.lblDadosPessoaisEmpresa.TabIndex = 1;
-            this.lblDadosPessoaisEmpresa.Text = "Dados Pessoais / Empresa";
+            this.lblDadosEquipamento.AutoSize = true;
+            this.lblDadosEquipamento.BackColor = System.Drawing.Color.Transparent;
+            this.lblDadosEquipamento.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDadosEquipamento.Location = new System.Drawing.Point(102, 157);
+            this.lblDadosEquipamento.Name = "lblDadosEquipamento";
+            this.lblDadosEquipamento.Size = new System.Drawing.Size(167, 20);
+            this.lblDadosEquipamento.TabIndex = 1;
+            this.lblDadosEquipamento.Text = "Dados do equipamento";
             // 
             // lblCliente
             // 
@@ -196,15 +196,6 @@
             this.panel1.Size = new System.Drawing.Size(807, 340);
             this.panel1.TabIndex = 23;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(40, 66);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(368, 23);
-            this.comboBox1.TabIndex = 0;
-            // 
             // comboBox2
             // 
             this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -213,6 +204,15 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(368, 23);
             this.comboBox2.TabIndex = 1;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(40, 66);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(368, 23);
+            this.comboBox1.TabIndex = 0;
             // 
             // TelaCadastroDeEquipamentos
             // 
@@ -233,7 +233,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblCliente);
-            this.Controls.Add(this.lblDadosPessoaisEmpresa);
+            this.Controls.Add(this.lblDadosEquipamento);
             this.Controls.Add(this.panel1);
             this.Name = "TelaCadastroDeEquipamentos";
             this.Text = "TelaCadastroDeEquipamentos";
@@ -245,7 +245,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblDadosPessoaisEmpresa;
+        private System.Windows.Forms.Label lblDadosEquipamento;
         private System.Windows.Forms.Label lblCliente;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox2;

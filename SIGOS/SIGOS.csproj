@@ -149,6 +149,9 @@
     <EmbeddedResource Include="Telas\TelaCadastroDeEquipamentos.resx">
       <DependentUpon>TelaCadastroDeEquipamentos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Telas\TelaCadastroDeServicos.resx">
+      <DependentUpon>TelaCadastroDeServicos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\TelaCadastroDeTecnicos.resx">
       <DependentUpon>TelaCadastroDeTecnicos.cs</DependentUpon>
     </EmbeddedResource>

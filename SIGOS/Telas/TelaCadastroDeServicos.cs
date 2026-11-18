@@ -16,5 +16,10 @@ namespace SIGOS.Telas
         {
             InitializeComponent();
         }
+
+        private void lblDadosPessoaisEmpresa_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

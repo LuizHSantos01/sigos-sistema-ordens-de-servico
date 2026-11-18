@@ -21,5 +21,10 @@ namespace SIGOS.Telas
         {
 
         }
+
+        private void txtDescricaoOS_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
