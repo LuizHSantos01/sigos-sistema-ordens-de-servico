@@ -61,9 +61,9 @@
             this.lblDescricaoServico.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescricaoServico.Location = new System.Drawing.Point(103, 171);
             this.lblDescricaoServico.Name = "lblDescricaoServico";
-            this.lblDescricaoServico.Size = new System.Drawing.Size(47, 17);
+            this.lblDescricaoServico.Size = new System.Drawing.Size(130, 17);
             this.lblDescricaoServico.TabIndex = 3;
-            this.lblDescricaoServico.Text = "Cliente";
+            this.lblDescricaoServico.Text = "Descrição do serviço";
             // 
             // txtDescricaoServico
             // 

@@ -125,6 +125,24 @@
     <Compile Include="Telas\TelaCadastroDeTecnicos.Designer.cs">
       <DependentUpon>TelaCadastroDeTecnicos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\TelaConsultaOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\TelaConsultaOS.Designer.cs">
+      <DependentUpon>TelaConsultaOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\TelaHistoricoOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\TelaHistoricoOS.Designer.cs">
+      <DependentUpon>TelaHistoricoOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\TelaItensOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\TelaItensOS.Designer.cs">
+      <DependentUpon>TelaItensOS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\TelaLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +172,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\TelaCadastroDeTecnicos.resx">
       <DependentUpon>TelaCadastroDeTecnicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\TelaConsultaOS.resx">
+      <DependentUpon>TelaConsultaOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\TelaHistoricoOS.resx">
+      <DependentUpon>TelaHistoricoOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\TelaItensOS.resx">
+      <DependentUpon>TelaItensOS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\TelaLogin.resx">
       <DependentUpon>TelaLogin.cs</DependentUpon>

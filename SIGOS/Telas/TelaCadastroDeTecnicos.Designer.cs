@@ -35,10 +35,10 @@
             this.txtTelefoneTecnico = new System.Windows.Forms.TextBox();
             this.txtEspecialidadeTecnico = new System.Windows.Forms.TextBox();
             this.lblEspecialidade = new System.Windows.Forms.Label();
-            this.txtContatoTelefoneTecnico = new System.Windows.Forms.TextBox();
             this.lblStatus = new System.Windows.Forms.Label();
             this.btnLimparFormularioTecnico = new System.Windows.Forms.Button();
             this.btnSalvarTecnico = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblNomeTecnico
@@ -102,15 +102,6 @@
             this.lblEspecialidade.TabIndex = 4;
             this.lblEspecialidade.Text = "Especialidade";
             // 
-            // txtContatoTelefoneTecnico
-            // 
-            this.txtContatoTelefoneTecnico.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtContatoTelefoneTecnico.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContatoTelefoneTecnico.Location = new System.Drawing.Point(476, 266);
-            this.txtContatoTelefoneTecnico.Name = "txtContatoTelefoneTecnico";
-            this.txtContatoTelefoneTecnico.Size = new System.Drawing.Size(337, 23);
-            this.txtContatoTelefoneTecnico.TabIndex = 19;
-            // 
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
@@ -144,6 +135,15 @@
             this.btnSalvarTecnico.Text = "Salvar técnico";
             this.btnSalvarTecnico.UseVisualStyleBackColor = false;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(476, 266);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(337, 23);
+            this.comboBox1.TabIndex = 29;
+            // 
             // TelaCadastroDeTecnicos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -151,9 +151,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(907, 498);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnSalvarTecnico);
             this.Controls.Add(this.btnLimparFormularioTecnico);
-            this.Controls.Add(this.txtContatoTelefoneTecnico);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.txtEspecialidadeTecnico);
             this.Controls.Add(this.lblEspecialidade);
@@ -176,9 +176,9 @@
         private System.Windows.Forms.TextBox txtTelefoneTecnico;
         private System.Windows.Forms.TextBox txtEspecialidadeTecnico;
         private System.Windows.Forms.Label lblEspecialidade;
-        private System.Windows.Forms.TextBox txtContatoTelefoneTecnico;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Button btnLimparFormularioTecnico;
         private System.Windows.Forms.Button btnSalvarTecnico;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

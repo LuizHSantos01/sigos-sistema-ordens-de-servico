@@ -44,7 +44,7 @@
             this.dtpAberturaOS = new System.Windows.Forms.DateTimePicker();
             this.lblDescricaoOS = new System.Windows.Forms.Label();
             this.txtDescricaoOS = new System.Windows.Forms.TextBox();
-            this.btnSalvarTecnico = new System.Windows.Forms.Button();
+            this.btnSalvarOS = new System.Windows.Forms.Button();
             this.btnLimparFormularioTecnico = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -199,17 +199,17 @@
             this.txtDescricaoOS.TabIndex = 17;
             this.txtDescricaoOS.TextChanged += new System.EventHandler(this.txtDescricaoOS_TextChanged);
             // 
-            // btnSalvarTecnico
+            // btnSalvarOS
             // 
-            this.btnSalvarTecnico.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnSalvarTecnico.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvarTecnico.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSalvarTecnico.Location = new System.Drawing.Point(651, 382);
-            this.btnSalvarTecnico.Name = "btnSalvarTecnico";
-            this.btnSalvarTecnico.Size = new System.Drawing.Size(151, 34);
-            this.btnSalvarTecnico.TabIndex = 23;
-            this.btnSalvarTecnico.Text = "Salvar equipamento";
-            this.btnSalvarTecnico.UseVisualStyleBackColor = false;
+            this.btnSalvarOS.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnSalvarOS.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvarOS.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSalvarOS.Location = new System.Drawing.Point(651, 382);
+            this.btnSalvarOS.Name = "btnSalvarOS";
+            this.btnSalvarOS.Size = new System.Drawing.Size(151, 34);
+            this.btnSalvarOS.TabIndex = 23;
+            this.btnSalvarOS.Text = "Salvar OS";
+            this.btnSalvarOS.UseVisualStyleBackColor = false;
             // 
             // btnLimparFormularioTecnico
             // 
@@ -229,7 +229,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(907, 498);
             this.Controls.Add(this.btnLimparFormularioTecnico);
-            this.Controls.Add(this.btnSalvarTecnico);
+            this.Controls.Add(this.btnSalvarOS);
             this.Controls.Add(this.txtDescricaoOS);
             this.Controls.Add(this.lblDescricaoOS);
             this.Controls.Add(this.dtpAberturaOS);
@@ -270,7 +270,7 @@
         private System.Windows.Forms.DateTimePicker dtpAberturaOS;
         private System.Windows.Forms.Label lblDescricaoOS;
         private System.Windows.Forms.TextBox txtDescricaoOS;
-        private System.Windows.Forms.Button btnSalvarTecnico;
+        private System.Windows.Forms.Button btnSalvarOS;
         private System.Windows.Forms.Button btnLimparFormularioTecnico;
     }
 }
