@@ -17,7 +17,7 @@ namespace SIGOS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TelaCadastroDeEquipamentos());
+            Application.Run(new TelaMenuPrincipal());
         }
     }
 }
