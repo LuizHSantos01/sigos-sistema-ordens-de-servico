@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using SIGOS.Banco;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,8 +26,27 @@ namespace SIGOS.Telas
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            TelaCadastroDeClientes telaCadastroDeClientes = new TelaCadastroDeClientes();
-            telaCadastroDeClientes.Show();
+            ConexaoBanco banco = new ConexaoBanco();
+            string sql = "SELECT * FROM usuarios " +"WHERE login = '" +
+                txtUsuario.Text + "'" +" AND senha_hash = '" + txtSenha.Text +
+                "'" +" AND ativo = 1";
+
+            MySqlDataReader dados = banco.TransacaoBusca(sql);
+
+            if (dados != null && dados.Read())
+            {
+                MessageBox.Show("Bem vindo ao SIGOS");
+                TelaMenuPrincipal menu = new TelaMenuPrincipal();
+                menu.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Usuario ou senha incorretos");
+            }
+
+            //TelaMenuPrincipal telaMenuPrincipal = new TelaMenuPrincipal();
+            //telaMenuPrincipal.Show();
         }
     }
 }
