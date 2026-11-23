@@ -169,5 +169,9 @@ namespace SIGOS.Telas
             cbCliente.ValueMember = "id";
         }
 
+        private void cbCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

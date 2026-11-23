@@ -30,32 +30,23 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaHistoricoOS));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.lblEquipamento = new System.Windows.Forms.Label();
-            this.btnLimparFormularioServico = new System.Windows.Forms.Button();
-            this.btnSalvarServico = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtPrecoUnitarioServico = new System.Windows.Forms.TextBox();
-            this.cbStatusServico = new System.Windows.Forms.ComboBox();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.dgvHistoricoOs = new System.Windows.Forms.DataGridView();
+            this.txtNumeroDaOS = new System.Windows.Forms.TextBox();
             this.lblDescricaoServico = new System.Windows.Forms.Label();
             this.lblDadosDaOS = new System.Windows.Forms.Label();
+            this.btnMenuPrincipal = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHistoricoOs)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.lblEquipamento);
-            this.panel1.Controls.Add(this.btnLimparFormularioServico);
-            this.panel1.Controls.Add(this.btnSalvarServico);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.txtPrecoUnitarioServico);
-            this.panel1.Controls.Add(this.cbStatusServico);
+            this.panel1.Controls.Add(this.btnPesquisar);
+            this.panel1.Controls.Add(this.dgvHistoricoOs);
+            this.panel1.Controls.Add(this.txtNumeroDaOS);
             this.panel1.Controls.Add(this.lblDescricaoServico);
             this.panel1.Controls.Add(this.lblDadosDaOS);
             this.panel1.Location = new System.Drawing.Point(59, 134);
@@ -63,84 +54,33 @@
             this.panel1.Size = new System.Drawing.Size(796, 366);
             this.panel1.TabIndex = 28;
             // 
-            // dataGridView1
+            // btnPesquisar
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(44, 123);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(712, 154);
-            this.dataGridView1.TabIndex = 33;
+            this.btnPesquisar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisar.Location = new System.Drawing.Point(171, 54);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(151, 23);
+            this.btnPesquisar.TabIndex = 45;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
-            // comboBox1
+            // dgvHistoricoOs
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(459, 54);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(297, 23);
-            this.comboBox1.TabIndex = 28;
+            this.dgvHistoricoOs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHistoricoOs.Location = new System.Drawing.Point(44, 83);
+            this.dgvHistoricoOs.Name = "dgvHistoricoOs";
+            this.dgvHistoricoOs.Size = new System.Drawing.Size(712, 154);
+            this.dgvHistoricoOs.TabIndex = 33;
             // 
-            // lblEquipamento
+            // txtNumeroDaOS
             // 
-            this.lblEquipamento.AutoSize = true;
-            this.lblEquipamento.BackColor = System.Drawing.Color.Transparent;
-            this.lblEquipamento.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEquipamento.Location = new System.Drawing.Point(456, 34);
-            this.lblEquipamento.Name = "lblEquipamento";
-            this.lblEquipamento.Size = new System.Drawing.Size(85, 17);
-            this.lblEquipamento.TabIndex = 27;
-            this.lblEquipamento.Text = "Equipamento";
-            // 
-            // btnLimparFormularioServico
-            // 
-            this.btnLimparFormularioServico.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimparFormularioServico.Location = new System.Drawing.Point(44, 83);
-            this.btnLimparFormularioServico.Name = "btnLimparFormularioServico";
-            this.btnLimparFormularioServico.Size = new System.Drawing.Size(180, 34);
-            this.btnLimparFormularioServico.TabIndex = 26;
-            this.btnLimparFormularioServico.Text = "Limpar filtros";
-            this.btnLimparFormularioServico.UseVisualStyleBackColor = true;
-            // 
-            // btnSalvarServico
-            // 
-            this.btnSalvarServico.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnSalvarServico.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvarServico.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSalvarServico.Location = new System.Drawing.Point(230, 83);
-            this.btnSalvarServico.Name = "btnSalvarServico";
-            this.btnSalvarServico.Size = new System.Drawing.Size(180, 34);
-            this.btnSalvarServico.TabIndex = 24;
-            this.btnSalvarServico.Text = "Pesquisar";
-            this.btnSalvarServico.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(164, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 17);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Cliente";
-            // 
-            // txtPrecoUnitarioServico
-            // 
-            this.txtPrecoUnitarioServico.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPrecoUnitarioServico.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecoUnitarioServico.Location = new System.Drawing.Point(44, 54);
-            this.txtPrecoUnitarioServico.Name = "txtPrecoUnitarioServico";
-            this.txtPrecoUnitarioServico.Size = new System.Drawing.Size(114, 23);
-            this.txtPrecoUnitarioServico.TabIndex = 14;
-            // 
-            // cbStatusServico
-            // 
-            this.cbStatusServico.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbStatusServico.FormattingEnabled = true;
-            this.cbStatusServico.Location = new System.Drawing.Point(164, 54);
-            this.cbStatusServico.Name = "cbStatusServico";
-            this.cbStatusServico.Size = new System.Drawing.Size(289, 23);
-            this.cbStatusServico.TabIndex = 13;
+            this.txtNumeroDaOS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNumeroDaOS.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumeroDaOS.Location = new System.Drawing.Point(44, 54);
+            this.txtNumeroDaOS.Name = "txtNumeroDaOS";
+            this.txtNumeroDaOS.Size = new System.Drawing.Size(121, 23);
+            this.txtNumeroDaOS.TabIndex = 14;
             // 
             // lblDescricaoServico
             // 
@@ -164,6 +104,17 @@
             this.lblDadosDaOS.TabIndex = 2;
             this.lblDadosDaOS.Text = "Dados da OS";
             // 
+            // btnMenuPrincipal
+            // 
+            this.btnMenuPrincipal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuPrincipal.Location = new System.Drawing.Point(765, 12);
+            this.btnMenuPrincipal.Name = "btnMenuPrincipal";
+            this.btnMenuPrincipal.Size = new System.Drawing.Size(90, 40);
+            this.btnMenuPrincipal.TabIndex = 29;
+            this.btnMenuPrincipal.Text = "Menu";
+            this.btnMenuPrincipal.UseVisualStyleBackColor = true;
+            this.btnMenuPrincipal.Click += new System.EventHandler(this.btnMenuPrincipal_Click);
+            // 
             // TelaHistoricoOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,12 +122,13 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(907, 498);
+            this.Controls.Add(this.btnMenuPrincipal);
             this.Controls.Add(this.panel1);
             this.Name = "TelaHistoricoOS";
             this.Text = "TelaHistoricoOS";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHistoricoOs)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -184,15 +136,11 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label lblEquipamento;
-        private System.Windows.Forms.Button btnLimparFormularioServico;
-        private System.Windows.Forms.Button btnSalvarServico;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtPrecoUnitarioServico;
-        private System.Windows.Forms.ComboBox cbStatusServico;
+        private System.Windows.Forms.DataGridView dgvHistoricoOs;
+        private System.Windows.Forms.TextBox txtNumeroDaOS;
         private System.Windows.Forms.Label lblDescricaoServico;
         private System.Windows.Forms.Label lblDadosDaOS;
+        private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.Button btnMenuPrincipal;
     }
 }

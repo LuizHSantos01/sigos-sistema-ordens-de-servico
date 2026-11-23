@@ -305,6 +305,7 @@
             this.cbCliente.Name = "cbCliente";
             this.cbCliente.Size = new System.Drawing.Size(368, 23);
             this.cbCliente.TabIndex = 0;
+            this.cbCliente.SelectedIndexChanged += new System.EventHandler(this.cbCliente_SelectedIndexChanged);
             // 
             // btnMenuPrincipal
             // 
