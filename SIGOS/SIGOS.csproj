@@ -96,6 +96,7 @@
     <Compile Include="Classes\Cliente.cs" />
     <Compile Include="Classes\Equipamento.cs" />
     <Compile Include="Classes\HistoricoOS.cs" />
+    <Compile Include="Classes\ItensOS.cs" />
     <Compile Include="Classes\Servico.cs" />
     <Compile Include="Classes\Tecnico.cs" />
     <Compile Include="Program.cs" />

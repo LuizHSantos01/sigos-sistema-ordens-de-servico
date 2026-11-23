@@ -46,6 +46,7 @@
             this.txtDescricaoOS = new System.Windows.Forms.TextBox();
             this.btnSalvarOS = new System.Windows.Forms.Button();
             this.btnLimparFormularioTecnico = new System.Windows.Forms.Button();
+            this.btnMenuPrincipal = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblDadosDaOS
@@ -220,6 +221,17 @@
             this.btnLimparFormularioTecnico.Text = "Limpar formulário";
             this.btnLimparFormularioTecnico.UseVisualStyleBackColor = true;
             // 
+            // btnMenuPrincipal
+            // 
+            this.btnMenuPrincipal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuPrincipal.Location = new System.Drawing.Point(754, 12);
+            this.btnMenuPrincipal.Name = "btnMenuPrincipal";
+            this.btnMenuPrincipal.Size = new System.Drawing.Size(90, 40);
+            this.btnMenuPrincipal.TabIndex = 40;
+            this.btnMenuPrincipal.Text = "Menu";
+            this.btnMenuPrincipal.UseVisualStyleBackColor = true;
+            this.btnMenuPrincipal.Click += new System.EventHandler(this.btnMenuPrincipal_Click);
+            // 
             // TelaAberturaDeOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -227,6 +239,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(907, 498);
+            this.Controls.Add(this.btnMenuPrincipal);
             this.Controls.Add(this.btnLimparFormularioTecnico);
             this.Controls.Add(this.btnSalvarOS);
             this.Controls.Add(this.txtDescricaoOS);
@@ -271,5 +284,6 @@
         private System.Windows.Forms.TextBox txtDescricaoOS;
         private System.Windows.Forms.Button btnSalvarOS;
         private System.Windows.Forms.Button btnLimparFormularioTecnico;
+        private System.Windows.Forms.Button btnMenuPrincipal;
     }
 }

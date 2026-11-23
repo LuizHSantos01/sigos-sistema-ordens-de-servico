@@ -229,6 +229,17 @@ namespace SIGOS.Telas
 
                             tran.Commit();
 
+                            //
+                            MessageBox.Show("OS nº " + idOs + " aberta com sucesso!","SIGOS",
+                                MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+                            TelaItensOS telaItens =new TelaItensOS((int)idOs);
+
+                            telaItens.Show();
+
+                            this.Hide();
+                            //
+
                             MessageBox.Show("OS nº " + idOs + " aberta com sucesso!",
                                 "SIGOS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             LimparFormulario();
@@ -265,6 +276,13 @@ namespace SIGOS.Telas
         private void btnLimparFormularioTecnico_Click(object sender, EventArgs e)
         {
             LimparFormulario();
+        }
+
+        private void btnMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            TelaMenuPrincipal menu = new TelaMenuPrincipal();
+            menu.Show();
+            this.Close();
         }
     }
 }
