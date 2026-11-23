@@ -46,6 +46,12 @@ namespace SIGOS.Telas
             cbServico.DataSource = tabela;
             cbServico.DisplayMember = "descricao";
             cbServico.ValueMember = "id";
+
+            DataRowView primeiro = cbServico.SelectedItem as DataRowView;
+            if (primeiro != null)
+            {
+                txtPrecoUnitario.Text = primeiro["preco"].ToString();
+            }
         }
         private void CarregarItens()
         {
@@ -67,19 +73,47 @@ namespace SIGOS.Telas
                     total += Convert.ToDecimal(linha.Cells["subtotal"].Value);
                 }
             }
+
             txtTotalOS.Text = total.ToString("N2");
+
+            ConexaoBanco banco = new ConexaoBanco();
+            string sql = "UPDATE ordens_servico SET total = " + total.ToString().Replace(",", ".") + " WHERE id = " + idOS;
+            banco.TransacaoAlterarRegistro(sql);
+            banco.CommitBanco();
         }
 
         private void btnAdicionarServico_Click(object sender, EventArgs e)
         {
+            decimal quantidade;
+            decimal preco;
+
+            if (cbServico.SelectedValue == null)
+            {
+                MessageBox.Show("Selecione um serviço.");
+                return;
+            }
+
+            if (!decimal.TryParse(txtQuantidadeServico.Text, out quantidade) || quantidade <= 0)
+            {
+                MessageBox.Show("Informe uma quantidade válida.");
+                return;
+            }
+
+            if (!decimal.TryParse(txtPrecoUnitario.Text, out preco) || preco <= 0)
+            {
+                MessageBox.Show("Preço unitário inválido.");
+                return;
+            }
+
             ItensOS item = new ItensOS();
             item.OrdemServicoId = idOS;
-            item.ServicoId =Convert.ToInt32(cbServico.SelectedValue);
-            item.Quantidade =Convert.ToDecimal(txtQuantidadeServico.Text);
-            item.PrecoUnitario =Convert.ToDecimal(txtPrecoUnitario.Text);
+            item.ServicoId = Convert.ToInt32(cbServico.SelectedValue);
+            item.Quantidade = quantidade;
+            item.PrecoUnitario = preco;
 
             if (item.Adicionar())
             {
+                txtQuantidadeServico.Clear();
                 CarregarItens();
             }
         }
@@ -106,12 +140,26 @@ namespace SIGOS.Telas
 
         private void btnRemoverItem_Click(object sender, EventArgs e)
         {
+            if (dgvItensServico.CurrentRow == null)
+            {
+                MessageBox.Show("Selecione um item para remover.");
+                return;
+            }
+
             ItensOS item = new ItensOS();
-            item.Id = idItemSelecionado;
+            item.Id = Convert.ToInt32(dgvItensServico.CurrentRow.Cells["id"].Value);
+
             if (item.Excluir())
             {
                 CarregarItens();
             }
+        }
+
+        private void btnMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            TelaMenuPrincipal menu = new TelaMenuPrincipal();
+            menu.Show();
+            this.Close();
         }
     }
 }

@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaItensOS));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtTotalOS = new System.Windows.Forms.TextBox();
             this.btnRemoverItem = new System.Windows.Forms.Button();
             this.dgvItensServico = new System.Windows.Forms.DataGridView();
             this.btnAdicionarServico = new System.Windows.Forms.Button();
@@ -40,8 +42,7 @@
             this.cbServico = new System.Windows.Forms.ComboBox();
             this.lblDescricaoServico = new System.Windows.Forms.Label();
             this.lblAdicionarItens = new System.Windows.Forms.Label();
-            this.txtTotalOS = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.btnMenuPrincipal = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItensServico)).BeginInit();
             this.SuspendLayout();
@@ -66,6 +67,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(796, 353);
             this.panel1.TabIndex = 26;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(553, 308);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 17);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "Total OS:";
+            // 
+            // txtTotalOS
+            // 
+            this.txtTotalOS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTotalOS.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalOS.Location = new System.Drawing.Point(635, 308);
+            this.txtTotalOS.Name = "txtTotalOS";
+            this.txtTotalOS.Size = new System.Drawing.Size(113, 23);
+            this.txtTotalOS.TabIndex = 27;
             // 
             // btnRemoverItem
             // 
@@ -172,25 +193,16 @@
             this.lblAdicionarItens.TabIndex = 2;
             this.lblAdicionarItens.Text = "Adicionar itens";
             // 
-            // txtTotalOS
+            // btnMenuPrincipal
             // 
-            this.txtTotalOS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTotalOS.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalOS.Location = new System.Drawing.Point(635, 308);
-            this.txtTotalOS.Name = "txtTotalOS";
-            this.txtTotalOS.Size = new System.Drawing.Size(113, 23);
-            this.txtTotalOS.TabIndex = 27;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(553, 308);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 17);
-            this.label3.TabIndex = 28;
-            this.label3.Text = "Total OS:";
+            this.btnMenuPrincipal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuPrincipal.Location = new System.Drawing.Point(767, 12);
+            this.btnMenuPrincipal.Name = "btnMenuPrincipal";
+            this.btnMenuPrincipal.Size = new System.Drawing.Size(90, 40);
+            this.btnMenuPrincipal.TabIndex = 41;
+            this.btnMenuPrincipal.Text = "Menu";
+            this.btnMenuPrincipal.UseVisualStyleBackColor = true;
+            this.btnMenuPrincipal.Click += new System.EventHandler(this.btnMenuPrincipal_Click);
             // 
             // TelaItensOS
             // 
@@ -199,6 +211,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(907, 498);
+            this.Controls.Add(this.btnMenuPrincipal);
             this.Controls.Add(this.panel1);
             this.Name = "TelaItensOS";
             this.Text = "TelaItensOS";
@@ -224,5 +237,6 @@
         private System.Windows.Forms.Button btnRemoverItem;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTotalOS;
+        private System.Windows.Forms.Button btnMenuPrincipal;
     }
 }

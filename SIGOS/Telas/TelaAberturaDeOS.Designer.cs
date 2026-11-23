@@ -88,6 +88,7 @@
             this.cbEquipamentoOS.Name = "cbEquipamentoOS";
             this.cbEquipamentoOS.Size = new System.Drawing.Size(345, 23);
             this.cbEquipamentoOS.TabIndex = 6;
+            this.cbEquipamentoOS.SelectedIndexChanged += new System.EventHandler(this.cbEquipamentoOS_SelectedIndexChanged);
             // 
             // lblEquipamentoOS
             // 

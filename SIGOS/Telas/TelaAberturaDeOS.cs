@@ -17,6 +17,8 @@ namespace SIGOS.Telas
 
             btnSalvarOS.Click += btnSalvarOS_Click;
             btnLimparFormularioTecnico.Click += btnLimparFormularioTecnico_Click;
+            cbClienteOS.SelectedIndexChanged += cbClienteOS_SelectedIndexChanged;
+
         }
 
         private MySqlConnection ObterConexao()
@@ -283,6 +285,39 @@ namespace SIGOS.Telas
             TelaMenuPrincipal menu = new TelaMenuPrincipal();
             menu.Show();
             this.Close();
+        }
+
+        private void cbEquipamentoOS_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (carregando) return;
+
+            if (cbClienteOS.SelectedIndex < 0 ||
+                cbClienteOS.SelectedValue == null ||
+                cbClienteOS.SelectedValue is DataRowView)
+            {
+                cbEquipamentoOS.DataSource = null;
+                return;
+            }
+
+            ConexaoBanco banco = new ConexaoBanco();
+
+            string sql =
+                "SELECT id, " +
+                "CONCAT(tipo, ' - ', marca, ' ', modelo) AS descricao " +
+                "FROM equipamentos " +
+                "WHERE cliente_id = " +
+                cbClienteOS.SelectedValue;
+
+            MySqlDataReader dados =
+                banco.TransacaoBusca(sql);
+
+            DataTable tabela = new DataTable();
+
+            tabela.Load(dados);
+
+            cbEquipamentoOS.DataSource = tabela;
+            cbEquipamentoOS.DisplayMember = "descricao";
+            cbEquipamentoOS.ValueMember = "id";
         }
     }
 }
