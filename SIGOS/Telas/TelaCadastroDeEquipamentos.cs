@@ -21,5 +21,14 @@ namespace SIGOS.Telas
         {
 
         }
+
+        private void btnMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            TelaMenuPrincipal menu = new TelaMenuPrincipal();
+            menu.Show();
+            this.Close();
+        }
+
+        
     }
 }

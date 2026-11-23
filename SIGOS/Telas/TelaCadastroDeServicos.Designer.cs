@@ -36,10 +36,17 @@
             this.lblPrecoUnitario = new System.Windows.Forms.Label();
             this.lblStatusServico = new System.Windows.Forms.Label();
             this.cbStatusServico = new System.Windows.Forms.ComboBox();
-            this.btnSalvarServico = new System.Windows.Forms.Button();
-            this.btnLimparFormularioServico = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnExcluirServico = new System.Windows.Forms.Button();
+            this.btnEditarServico = new System.Windows.Forms.Button();
+            this.btnSalvarServico = new System.Windows.Forms.Button();
+            this.btnLimparFormulario = new System.Windows.Forms.Button();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.txtPesquisar = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dgvTecnico = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTecnico)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDadosDoServico
@@ -114,39 +121,117 @@
             this.cbStatusServico.Size = new System.Drawing.Size(344, 23);
             this.cbStatusServico.TabIndex = 12;
             // 
-            // btnSalvarServico
-            // 
-            this.btnSalvarServico.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnSalvarServico.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvarServico.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSalvarServico.Location = new System.Drawing.Point(611, 156);
-            this.btnSalvarServico.Name = "btnSalvarServico";
-            this.btnSalvarServico.Size = new System.Drawing.Size(151, 34);
-            this.btnSalvarServico.TabIndex = 23;
-            this.btnSalvarServico.Text = "Salvar serviço";
-            this.btnSalvarServico.UseVisualStyleBackColor = false;
-            // 
-            // btnLimparFormularioServico
-            // 
-            this.btnLimparFormularioServico.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimparFormularioServico.Location = new System.Drawing.Point(454, 156);
-            this.btnLimparFormularioServico.Name = "btnLimparFormularioServico";
-            this.btnLimparFormularioServico.Size = new System.Drawing.Size(151, 34);
-            this.btnLimparFormularioServico.TabIndex = 24;
-            this.btnLimparFormularioServico.Text = "Limpar formulário";
-            this.btnLimparFormularioServico.UseVisualStyleBackColor = true;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.lblDadosDoServico);
-            this.panel1.Controls.Add(this.btnLimparFormularioServico);
+            this.panel1.Controls.Add(this.dgvTecnico);
+            this.panel1.Controls.Add(this.btnPesquisar);
+            this.panel1.Controls.Add(this.txtPesquisar);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.btnExcluirServico);
+            this.panel1.Controls.Add(this.btnEditarServico);
             this.panel1.Controls.Add(this.btnSalvarServico);
+            this.panel1.Controls.Add(this.btnLimparFormulario);
+            this.panel1.Controls.Add(this.lblDadosDoServico);
             this.panel1.Location = new System.Drawing.Point(61, 141);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(807, 233);
+            this.panel1.Size = new System.Drawing.Size(807, 345);
             this.panel1.TabIndex = 25;
+            // 
+            // btnExcluirServico
+            // 
+            this.btnExcluirServico.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnExcluirServico.FlatAppearance.BorderSize = 0;
+            this.btnExcluirServico.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluirServico.ForeColor = System.Drawing.Color.Black;
+            this.btnExcluirServico.Location = new System.Drawing.Point(201, 125);
+            this.btnExcluirServico.Name = "btnExcluirServico";
+            this.btnExcluirServico.Size = new System.Drawing.Size(151, 34);
+            this.btnExcluirServico.TabIndex = 37;
+            this.btnExcluirServico.Text = "Excluir";
+            this.btnExcluirServico.UseVisualStyleBackColor = false;
+            this.btnExcluirServico.Click += new System.EventHandler(this.btnExcluirServico_Click);
+            // 
+            // btnEditarServico
+            // 
+            this.btnEditarServico.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnEditarServico.FlatAppearance.BorderSize = 0;
+            this.btnEditarServico.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarServico.ForeColor = System.Drawing.Color.Black;
+            this.btnEditarServico.Location = new System.Drawing.Point(358, 125);
+            this.btnEditarServico.Name = "btnEditarServico";
+            this.btnEditarServico.Size = new System.Drawing.Size(151, 34);
+            this.btnEditarServico.TabIndex = 36;
+            this.btnEditarServico.Text = "Editar";
+            this.btnEditarServico.UseVisualStyleBackColor = false;
+            this.btnEditarServico.Click += new System.EventHandler(this.btnEditarServico_Click);
+            // 
+            // btnSalvarServico
+            // 
+            this.btnSalvarServico.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSalvarServico.FlatAppearance.BorderSize = 0;
+            this.btnSalvarServico.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvarServico.ForeColor = System.Drawing.Color.Black;
+            this.btnSalvarServico.Location = new System.Drawing.Point(515, 125);
+            this.btnSalvarServico.Name = "btnSalvarServico";
+            this.btnSalvarServico.Size = new System.Drawing.Size(151, 34);
+            this.btnSalvarServico.TabIndex = 35;
+            this.btnSalvarServico.Text = "Salvar serviço";
+            this.btnSalvarServico.UseVisualStyleBackColor = false;
+            this.btnSalvarServico.Click += new System.EventHandler(this.btnSalvarServico_Click);
+            // 
+            // btnLimparFormulario
+            // 
+            this.btnLimparFormulario.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimparFormulario.Location = new System.Drawing.Point(44, 125);
+            this.btnLimparFormulario.Name = "btnLimparFormulario";
+            this.btnLimparFormulario.Size = new System.Drawing.Size(151, 34);
+            this.btnLimparFormulario.TabIndex = 34;
+            this.btnLimparFormulario.Text = "Limpar formulario";
+            this.btnLimparFormulario.UseVisualStyleBackColor = true;
+            this.btnLimparFormulario.Click += new System.EventHandler(this.btnLimparFormulario_Click);
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisar.Location = new System.Drawing.Point(566, 165);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(151, 23);
+            this.btnPesquisar.TabIndex = 40;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
+            // txtPesquisar
+            // 
+            this.txtPesquisar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPesquisar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesquisar.Location = new System.Drawing.Point(201, 165);
+            this.txtPesquisar.Name = "txtPesquisar";
+            this.txtPesquisar.Size = new System.Drawing.Size(359, 23);
+            this.txtPesquisar.TabIndex = 39;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(40, 167);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(155, 15);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "Pesquisar serviço(descricao)";
+            // 
+            // dgvTecnico
+            // 
+            this.dgvTecnico.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTecnico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTecnico.Location = new System.Drawing.Point(-1, 194);
+            this.dgvTecnico.Name = "dgvTecnico";
+            this.dgvTecnico.Size = new System.Drawing.Size(807, 150);
+            this.dgvTecnico.TabIndex = 41;
+            this.dgvTecnico.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTecnico_CellContentClick);
             // 
             // TelaCadastroDeServicos
             // 
@@ -166,6 +251,7 @@
             this.Text = "TelaCadastroDeServicos";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTecnico)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,8 +266,14 @@
         private System.Windows.Forms.Label lblPrecoUnitario;
         private System.Windows.Forms.Label lblStatusServico;
         private System.Windows.Forms.ComboBox cbStatusServico;
-        private System.Windows.Forms.Button btnSalvarServico;
-        private System.Windows.Forms.Button btnLimparFormularioServico;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnExcluirServico;
+        private System.Windows.Forms.Button btnEditarServico;
+        private System.Windows.Forms.Button btnSalvarServico;
+        private System.Windows.Forms.Button btnLimparFormulario;
+        private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.TextBox txtPesquisar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dgvTecnico;
     }
 }
