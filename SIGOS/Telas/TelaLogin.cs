@@ -48,5 +48,10 @@ namespace SIGOS.Telas
             //TelaMenuPrincipal telaMenuPrincipal = new TelaMenuPrincipal();
             //telaMenuPrincipal.Show();
         }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

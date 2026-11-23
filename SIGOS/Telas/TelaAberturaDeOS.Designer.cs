@@ -34,11 +34,11 @@
             this.cbClienteOS = new System.Windows.Forms.ComboBox();
             this.cbEquipamentoOS = new System.Windows.Forms.ComboBox();
             this.lblEquipamentoOS = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbTecnicoOS = new System.Windows.Forms.ComboBox();
             this.lblTecnicoOS = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbPrioridadeOS = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cbStatusOS = new System.Windows.Forms.ComboBox();
             this.lblStatusOS = new System.Windows.Forms.Label();
             this.lblAberturaOS = new System.Windows.Forms.Label();
             this.dtpAberturaOS = new System.Windows.Forms.DateTimePicker();
@@ -99,14 +99,14 @@
             this.lblEquipamentoOS.TabIndex = 7;
             this.lblEquipamentoOS.Text = "Equipamento";
             // 
-            // comboBox1
+            // cbTecnicoOS
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(106, 241);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(345, 23);
-            this.comboBox1.TabIndex = 9;
+            this.cbTecnicoOS.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTecnicoOS.FormattingEnabled = true;
+            this.cbTecnicoOS.Location = new System.Drawing.Point(106, 241);
+            this.cbTecnicoOS.Name = "cbTecnicoOS";
+            this.cbTecnicoOS.Size = new System.Drawing.Size(345, 23);
+            this.cbTecnicoOS.TabIndex = 9;
             // 
             // lblTecnicoOS
             // 
@@ -119,14 +119,14 @@
             this.lblTecnicoOS.TabIndex = 8;
             this.lblTecnicoOS.Text = "Tecnico";
             // 
-            // comboBox2
+            // cbPrioridadeOS
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(457, 241);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(345, 23);
-            this.comboBox2.TabIndex = 11;
+            this.cbPrioridadeOS.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPrioridadeOS.FormattingEnabled = true;
+            this.cbPrioridadeOS.Location = new System.Drawing.Point(457, 241);
+            this.cbPrioridadeOS.Name = "cbPrioridadeOS";
+            this.cbPrioridadeOS.Size = new System.Drawing.Size(345, 23);
+            this.cbPrioridadeOS.TabIndex = 11;
             // 
             // label1
             // 
@@ -139,14 +139,14 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Prioridade";
             // 
-            // comboBox3
+            // cbStatusOS
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(106, 287);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(345, 23);
-            this.comboBox3.TabIndex = 13;
+            this.cbStatusOS.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbStatusOS.FormattingEnabled = true;
+            this.cbStatusOS.Location = new System.Drawing.Point(106, 287);
+            this.cbStatusOS.Name = "cbStatusOS";
+            this.cbStatusOS.Size = new System.Drawing.Size(345, 23);
+            this.cbStatusOS.TabIndex = 13;
             // 
             // lblStatusOS
             // 
@@ -197,7 +197,6 @@
             this.txtDescricaoOS.Name = "txtDescricaoOS";
             this.txtDescricaoOS.Size = new System.Drawing.Size(696, 43);
             this.txtDescricaoOS.TabIndex = 17;
-            this.txtDescricaoOS.TextChanged += new System.EventHandler(this.txtDescricaoOS_TextChanged);
             // 
             // btnSalvarOS
             // 
@@ -234,11 +233,11 @@
             this.Controls.Add(this.lblDescricaoOS);
             this.Controls.Add(this.dtpAberturaOS);
             this.Controls.Add(this.lblAberturaOS);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.cbStatusOS);
             this.Controls.Add(this.lblStatusOS);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cbPrioridadeOS);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbTecnicoOS);
             this.Controls.Add(this.lblTecnicoOS);
             this.Controls.Add(this.lblEquipamentoOS);
             this.Controls.Add(this.cbEquipamentoOS);
@@ -260,11 +259,11 @@
         private System.Windows.Forms.ComboBox cbClienteOS;
         private System.Windows.Forms.ComboBox cbEquipamentoOS;
         private System.Windows.Forms.Label lblEquipamentoOS;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbTecnicoOS;
         private System.Windows.Forms.Label lblTecnicoOS;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbPrioridadeOS;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cbStatusOS;
         private System.Windows.Forms.Label lblStatusOS;
         private System.Windows.Forms.Label lblAberturaOS;
         private System.Windows.Forms.DateTimePicker dtpAberturaOS;
