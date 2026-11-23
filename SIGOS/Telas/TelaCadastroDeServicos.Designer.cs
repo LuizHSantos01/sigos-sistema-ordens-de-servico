@@ -37,14 +37,15 @@
             this.lblStatusServico = new System.Windows.Forms.Label();
             this.cbStatusServico = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvTecnico = new System.Windows.Forms.DataGridView();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.txtPesquisar = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnExcluirServico = new System.Windows.Forms.Button();
             this.btnEditarServico = new System.Windows.Forms.Button();
             this.btnSalvarServico = new System.Windows.Forms.Button();
             this.btnLimparFormulario = new System.Windows.Forms.Button();
-            this.btnPesquisar = new System.Windows.Forms.Button();
-            this.txtPesquisar = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dgvTecnico = new System.Windows.Forms.DataGridView();
+            this.btnMenuPrincipal = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTecnico)).BeginInit();
             this.SuspendLayout();
@@ -139,6 +140,47 @@
             this.panel1.Size = new System.Drawing.Size(807, 345);
             this.panel1.TabIndex = 25;
             // 
+            // dgvTecnico
+            // 
+            this.dgvTecnico.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTecnico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTecnico.Location = new System.Drawing.Point(-1, 194);
+            this.dgvTecnico.Name = "dgvTecnico";
+            this.dgvTecnico.Size = new System.Drawing.Size(807, 150);
+            this.dgvTecnico.TabIndex = 41;
+            this.dgvTecnico.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTecnico_CellContentClick);
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisar.Location = new System.Drawing.Point(566, 165);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(151, 23);
+            this.btnPesquisar.TabIndex = 40;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
+            // txtPesquisar
+            // 
+            this.txtPesquisar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPesquisar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesquisar.Location = new System.Drawing.Point(201, 165);
+            this.txtPesquisar.Name = "txtPesquisar";
+            this.txtPesquisar.Size = new System.Drawing.Size(359, 23);
+            this.txtPesquisar.TabIndex = 39;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(40, 167);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(155, 15);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "Pesquisar serviço(descricao)";
+            // 
             // btnExcluirServico
             // 
             this.btnExcluirServico.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -192,46 +234,16 @@
             this.btnLimparFormulario.UseVisualStyleBackColor = true;
             this.btnLimparFormulario.Click += new System.EventHandler(this.btnLimparFormulario_Click);
             // 
-            // btnPesquisar
+            // btnMenuPrincipal
             // 
-            this.btnPesquisar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisar.Location = new System.Drawing.Point(566, 165);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(151, 23);
-            this.btnPesquisar.TabIndex = 40;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = true;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
-            // 
-            // txtPesquisar
-            // 
-            this.txtPesquisar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPesquisar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPesquisar.Location = new System.Drawing.Point(201, 165);
-            this.txtPesquisar.Name = "txtPesquisar";
-            this.txtPesquisar.Size = new System.Drawing.Size(359, 23);
-            this.txtPesquisar.TabIndex = 39;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(40, 167);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 15);
-            this.label2.TabIndex = 38;
-            this.label2.Text = "Pesquisar serviço(descricao)";
-            // 
-            // dgvTecnico
-            // 
-            this.dgvTecnico.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvTecnico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTecnico.Location = new System.Drawing.Point(-1, 194);
-            this.dgvTecnico.Name = "dgvTecnico";
-            this.dgvTecnico.Size = new System.Drawing.Size(807, 150);
-            this.dgvTecnico.TabIndex = 41;
-            this.dgvTecnico.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTecnico_CellContentClick);
+            this.btnMenuPrincipal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuPrincipal.Location = new System.Drawing.Point(778, 12);
+            this.btnMenuPrincipal.Name = "btnMenuPrincipal";
+            this.btnMenuPrincipal.Size = new System.Drawing.Size(90, 40);
+            this.btnMenuPrincipal.TabIndex = 40;
+            this.btnMenuPrincipal.Text = "Menu";
+            this.btnMenuPrincipal.UseVisualStyleBackColor = true;
+            this.btnMenuPrincipal.Click += new System.EventHandler(this.btnMenuPrincipal_Click);
             // 
             // TelaCadastroDeServicos
             // 
@@ -240,6 +252,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(907, 498);
+            this.Controls.Add(this.btnMenuPrincipal);
             this.Controls.Add(this.cbStatusServico);
             this.Controls.Add(this.lblStatusServico);
             this.Controls.Add(this.txtPrecoUnitarioServico);
@@ -275,5 +288,6 @@
         private System.Windows.Forms.TextBox txtPesquisar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvTecnico;
+        private System.Windows.Forms.Button btnMenuPrincipal;
     }
 }

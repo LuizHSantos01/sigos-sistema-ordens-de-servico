@@ -46,21 +46,23 @@ namespace SIGOS.Telas
         {
             if (e.RowIndex >= 0)
             {
-                idServicoSelecionado =
-                    Convert.ToInt32(
-                        dgvTecnico.Rows[e.RowIndex].Cells["id"].Value);
+                idServicoSelecionado =Convert.ToInt32(dgvTecnico.Rows[e.RowIndex].Cells["id"].Value);
 
-                txtDescricaoServico.Text =
-                    dgvTecnico.Rows[e.RowIndex].Cells["descricao"].Value.ToString();
+                txtDescricaoServico.Text =dgvTecnico.Rows[e.RowIndex].Cells["descricao"].Value.ToString();
 
-                txtPrecoUnitarioServico.Text =
-                    dgvTecnico.Rows[e.RowIndex].Cells["preco"].Value.ToString();
+                txtPrecoUnitarioServico.Text =dgvTecnico.Rows[e.RowIndex].Cells["preco"].Value.ToString();
 
-                bool ativo =
-                    Convert.ToBoolean(
-                        dgvTecnico.Rows[e.RowIndex].Cells["ativo"].Value);
+                bool ativo =Convert.ToBoolean(dgvTecnico.Rows[e.RowIndex].Cells["ativo"].Value);
 
-                cbStatusServico.Text = ativo ? "Ativo" : "Inativo";
+                if (ativo)
+                {
+                    cbStatusServico.Text = "Ativo";
+                }
+                else
+                {
+                    cbStatusServico.Text = "Inativo";
+                }
+                ;
             }
         }
 
@@ -135,6 +137,13 @@ namespace SIGOS.Telas
 
             dgvTecnico.DataSource =
                 servico.Pesquisar(txtPesquisar.Text);
+        }
+
+        private void btnMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            TelaMenuPrincipal menu = new TelaMenuPrincipal();
+            menu.Show();
+            this.Close();
         }
     }
 }
