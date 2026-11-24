@@ -308,6 +308,7 @@
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.txtNomeRazaoSocialCliente);
             this.Controls.Add(this.lblNomeRazaoSocial);
+            this.MaximizeBox = false;
             this.Name = "TelaCadastroDeClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaCadastroDeClientes";

@@ -124,7 +124,9 @@
             this.ClientSize = new System.Drawing.Size(907, 498);
             this.Controls.Add(this.btnMenuPrincipal);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
             this.Name = "TelaHistoricoOS";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaHistoricoOS";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

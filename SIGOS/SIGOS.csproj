@@ -162,6 +162,12 @@
     <Compile Include="Telas\TelaMenuPrincipal.Designer.cs">
       <DependentUpon>TelaMenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\TelaTexto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\TelaTexto.Designer.cs">
+      <DependentUpon>TelaTexto.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -200,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\TelaMenuPrincipal.resx">
       <DependentUpon>TelaMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\TelaTexto.resx">
+      <DependentUpon>TelaTexto.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -273,6 +273,7 @@
             this.Controls.Add(this.btnMenuPrincipal);
             this.Controls.Add(this.panel1);
             this.Name = "TelaConsultaOS";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaConsultaOS";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

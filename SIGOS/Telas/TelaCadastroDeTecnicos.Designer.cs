@@ -261,7 +261,9 @@
             this.Controls.Add(this.lblTelefone);
             this.Controls.Add(this.txtNomeTecnico);
             this.Controls.Add(this.lblNomeTecnico);
+            this.MaximizeBox = false;
             this.Name = "TelaCadastroDeTecnicos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaCadastroDeTecnicos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvTecnico)).EndInit();
             this.ResumeLayout(false);

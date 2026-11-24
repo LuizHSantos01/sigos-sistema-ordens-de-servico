@@ -258,7 +258,9 @@
             this.Controls.Add(this.cbClienteOS);
             this.Controls.Add(this.lblCliente);
             this.Controls.Add(this.lblDadosDaOS);
+            this.MaximizeBox = false;
             this.Name = "TelaAberturaDeOS";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaAberturaDeOS";
             this.Load += new System.EventHandler(this.TelaAberturaDeOS_Load);
             this.ResumeLayout(false);

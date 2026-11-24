@@ -263,7 +263,9 @@
             this.Controls.Add(this.txtDescricaoServico);
             this.Controls.Add(this.lblDescricaoServico);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
             this.Name = "TelaCadastroDeServicos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaCadastroDeServicos";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

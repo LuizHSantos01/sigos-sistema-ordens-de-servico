@@ -205,9 +205,75 @@ namespace SIGOS.Telas
         }
 
         // Atualiza o status da OS selecionada na grade e registra a mudança em historico_os
-        private void AtualizarStatusOSSelecionada(string justificativa = "Alteração de status via consulta")
+        // Define quais mudanças de status são permitidas (fluxo do enunciado)
+        private bool TransicaoPermitida(string atual, string novo)
         {
-            // Garante que existe uma linha selecionada com número de OS válido
+            // OS concluída ou cancelada não pode mais ser alterada
+            if (atual == "CONCLUIDA" || atual == "CANCELADA")
+                return false;
+
+            // Cancelar é permitido em qualquer etapa
+            if (novo == "CANCELADA")
+                return true;
+
+            // Nos demais casos, só avança para o próximo status da lista
+            int posAtual = Array.IndexOf(StatusOS, atual);
+            int posNovo = Array.IndexOf(StatusOS, novo);
+
+            return posNovo == posAtual + 1;
+        }
+
+        // Abre uma janela simples para o usuário digitar um texto (justificativa, solução...)
+        private string PedirTexto(string titulo, string mensagem)
+        {
+            TelaTexto tela = new TelaTexto(titulo, mensagem);
+
+            string resultado = null;
+
+            if (tela.ShowDialog() == DialogResult.OK)
+            {
+                resultado = tela.TextoDigitado;
+            }
+
+            tela.Dispose();
+            return resultado;
+        }
+
+        // Confere se a OS pode ser concluída: diagnóstico, serviços registrados e valor calculado
+        private string ValidarConclusao(int idOs)
+        {
+            var parametros = new List<MySqlParameter>
+    {
+        new MySqlParameter("@idOs", idOs)
+    };
+
+            DataTable dt = Consultar(@"
+        SELECT os.diagnostico,
+               (SELECT COUNT(*) FROM itens_os WHERE ordem_servico_id = os.id) AS qtd,
+               (SELECT IFNULL(SUM(quantidade * preco_unitario), 0)
+                  FROM itens_os WHERE ordem_servico_id = os.id) AS total
+        FROM ordens_servico os
+        WHERE os.id = @idOs", parametros);
+
+            if (dt.Rows.Count == 0)
+                return "OS não encontrada.";
+
+            DataRow linha = dt.Rows[0];
+
+            if (string.IsNullOrWhiteSpace(Convert.ToString(linha["diagnostico"])))
+                return "Não é possível concluir: a OS não tem diagnóstico.";
+
+            if (Convert.ToInt32(linha["qtd"]) == 0)
+                return "Não é possível concluir: nenhum serviço foi registrado na OS.";
+
+            if (Convert.ToDecimal(linha["total"]) <= 0)
+                return "Não é possível concluir: o valor da OS não foi calculado.";
+
+            return "";
+        }
+
+        private void AtualizarStatusOSSelecionada()
+        {
             if (dgvOs.CurrentRow == null || dgvOs.CurrentRow.Cells["Nº OS"].Value == null)
             {
                 MessageBox.Show("Selecione uma ordem de serviço na grade.",
@@ -215,7 +281,6 @@ namespace SIGOS.Telas
                 return;
             }
 
-            // Garante que um novo status foi selecionado antes de tentar salvar
             if (cbNovoStatusOs.SelectedIndex < 0 || string.IsNullOrWhiteSpace(cbNovoStatusOs.Text))
             {
                 MessageBox.Show("Selecione o novo status.",
@@ -228,12 +293,55 @@ namespace SIGOS.Telas
             string statusAnterior = Convert.ToString(dgvOs.CurrentRow.Cells["Status"].Value);
             string statusNovo = cbNovoStatusOs.Text.Trim();
 
-            // Evita gravação redundante caso o status escolhido já seja o atual
             if (string.Equals(statusAnterior, statusNovo, StringComparison.OrdinalIgnoreCase))
             {
                 MessageBox.Show("A OS já está com esse status.",
                     "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
+            }
+
+            if (!TransicaoPermitida(statusAnterior, statusNovo))
+            {
+                MessageBox.Show("Mudança de status não permitida.\n" +
+                    "Siga o fluxo: ABERTA, DIAGNOSTICO, AGUARDANDO_APROVACAO, EM_EXECUCAO, CONCLUIDA.\n" +
+                    "Uma OS concluída ou cancelada não pode ser alterada.",
+                    "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string justificativa = "Alteração de status via consulta";
+            string solucao = null;
+
+            if (statusNovo == "CANCELADA")
+            {
+                justificativa = PedirTexto("Cancelamento", "Informe a justificativa do cancelamento:");
+
+                if (string.IsNullOrWhiteSpace(justificativa))
+                {
+                    MessageBox.Show("O cancelamento exige uma justificativa.",
+                        "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+
+            if (statusNovo == "CONCLUIDA")
+            {
+                string erro = ValidarConclusao(idOs);
+
+                if (erro != "")
+                {
+                    MessageBox.Show(erro, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                solucao = PedirTexto("Conclusão", "Informe a solução aplicada:");
+
+                if (string.IsNullOrWhiteSpace(solucao))
+                {
+                    MessageBox.Show("Informe a solução aplicada para concluir a OS.",
+                        "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
             }
 
             using (var con = ObterConexao())
@@ -246,25 +354,29 @@ namespace SIGOS.Telas
                     {
                         try
                         {
-                            // Atualiza o status da OS e preenche data_conclusao quando o status passa a CONCLUIDA
+                            // Atualiza o status, recalcula o total a partir dos itens e
+                            // preenche data_conclusao quando o status passa a CONCLUIDA
                             using (var cmdUpd = new MySqlCommand(
                                 @"UPDATE ordens_servico
-                                  SET status = @statusNovo,
-                                      data_conclusao = CASE WHEN @statusNovo = 'CONCLUIDA' THEN NOW() ELSE data_conclusao END
-                                  WHERE id = @idOs", con, tran))
+                          SET status = @statusNovo,
+                              total = (SELECT IFNULL(SUM(quantidade * preco_unitario), 0)
+                                       FROM itens_os WHERE ordem_servico_id = @idOs),
+                              solucao = IF(@solucao IS NULL, solucao, @solucao),
+                              data_conclusao = CASE WHEN @statusNovo = 'CONCLUIDA' THEN NOW() ELSE data_conclusao END
+                          WHERE id = @idOs", con, tran))
                             {
                                 cmdUpd.Parameters.AddWithValue("@statusNovo", statusNovo);
                                 cmdUpd.Parameters.AddWithValue("@idOs", idOs);
+                                cmdUpd.Parameters.AddWithValue("@solucao", (object)solucao ?? DBNull.Value);
                                 cmdUpd.ExecuteNonQuery();
                             }
-
                             // Registra a alteração no histórico com o usuário logado na sessão
                             using (var cmdHist = new MySqlCommand(
                                 @"INSERT INTO historico_os
-                                    (ordem_servico_id, status_anterior, status_novo,
-                                     usuario_id, data_alteracao, justificativa)
-                                  VALUES
-                                    (@os, @ant, @novo, @usr, NOW(), @just)", con, tran))
+                            (ordem_servico_id, status_anterior, status_novo,
+                             usuario_id, data_alteracao, justificativa)
+                          VALUES
+                            (@os, @ant, @novo, @usr, NOW(), @just)", con, tran))
                             {
                                 cmdHist.Parameters.AddWithValue("@os", idOs);
                                 cmdHist.Parameters.AddWithValue("@ant", statusAnterior);
@@ -273,9 +385,7 @@ namespace SIGOS.Telas
                                 cmdHist.Parameters.AddWithValue("@just", justificativa);
                                 cmdHist.ExecuteNonQuery();
                             }
-
                             tran.Commit();
-
                             MessageBox.Show("Status da OS nº " + idOs + " atualizado para " + statusNovo + "!",
                                 "SIGOS", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

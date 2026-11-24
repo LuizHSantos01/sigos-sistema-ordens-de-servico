@@ -167,6 +167,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnTestarConexaoBanco);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
             this.Name = "TelaMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaMenuPrincipal";

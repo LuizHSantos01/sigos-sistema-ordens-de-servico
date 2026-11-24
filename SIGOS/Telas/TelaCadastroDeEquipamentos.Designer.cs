@@ -327,6 +327,7 @@
             this.ClientSize = new System.Drawing.Size(907, 498);
             this.Controls.Add(this.btnMenuPrincipal);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
             this.Name = "TelaCadastroDeEquipamentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaCadastroDeEquipamentos";
