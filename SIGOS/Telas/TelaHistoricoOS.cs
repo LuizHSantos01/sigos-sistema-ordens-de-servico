@@ -38,9 +38,23 @@ namespace SIGOS.Telas
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
+            if (txtNumeroDaOS.Text.Trim() == "")
+            {
+                CarregarHistorico();
+                return;
+            }
+
+            int numeroOS;
+
+            if (!int.TryParse(txtNumeroDaOS.Text, out numeroOS))
+            {
+                MessageBox.Show("Informe apenas o número da OS.");
+                return;
+            }
+
             HistoricoOS historico = new HistoricoOS();
 
-            dgvHistoricoOs.DataSource =historico.PesquisarHistorico(txtNumeroDaOS.Text);
+            dgvHistoricoOs.DataSource = historico.PesquisarHistorico(numeroOS);
         }
 
         private void btnMenuPrincipal_Click(object sender, EventArgs e)

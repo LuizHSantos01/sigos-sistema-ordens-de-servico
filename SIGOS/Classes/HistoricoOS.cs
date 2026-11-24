@@ -52,11 +52,12 @@ namespace SIGOS.Classes
                 
         }
 
-        public DataTable PesquisarHistorico(string pesquisa)
+        public DataTable PesquisarHistorico(int ordemServicoId)
         {
             ConexaoBanco banco = new ConexaoBanco();
 
-            string sql ="SELECT * FROM historico_os " + "WHERE ordem_servico_id LIKE '%" + pesquisa + "%'";
+            string sql = "SELECT * FROM historico_os " +
+                "WHERE ordem_servico_id = " + ordemServicoId;
 
             MySqlDataReader dados = banco.TransacaoBusca(sql);
 

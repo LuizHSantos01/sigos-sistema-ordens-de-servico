@@ -19,6 +19,7 @@ namespace SIGOS.Telas
         {
             InitializeComponent();
             CarregarServicos();
+
         }
 
         private int idOS;
@@ -29,6 +30,7 @@ namespace SIGOS.Telas
             InitializeComponent();
             idOS = ordemServicoId;
             CarregarServicos();
+            CarregarItens();
         }
 
         private void CarregarServicos()
@@ -75,9 +77,8 @@ namespace SIGOS.Telas
             }
 
             txtTotalOS.Text = total.ToString("N2");
-
             ConexaoBanco banco = new ConexaoBanco();
-            string sql = "UPDATE ordens_servico SET total = " + total.ToString().Replace(",", ".") + " WHERE id = " + idOS;
+            string sql = "UPDATE ordens_servico SET total = " +total.ToString().Replace(",", ".") + " WHERE id = " + idOS;
             banco.TransacaoAlterarRegistro(sql);
             banco.CommitBanco();
         }
@@ -95,13 +96,13 @@ namespace SIGOS.Telas
 
             if (!decimal.TryParse(txtQuantidadeServico.Text, out quantidade) || quantidade <= 0)
             {
-                MessageBox.Show("Informe uma quantidade válida.");
+                MessageBox.Show("Informe uma quantidade valida");
                 return;
             }
 
             if (!decimal.TryParse(txtPrecoUnitario.Text, out preco) || preco <= 0)
             {
-                MessageBox.Show("Preço unitário inválido.");
+                MessageBox.Show("Preço unitario invalido");
                 return;
             }
 
@@ -140,9 +141,9 @@ namespace SIGOS.Telas
 
         private void btnRemoverItem_Click(object sender, EventArgs e)
         {
-            if (dgvItensServico.CurrentRow == null)
+            if (dgvItensServico.CurrentRow == null || dgvItensServico.CurrentRow.IsNewRow)
             {
-                MessageBox.Show("Selecione um item para remover.");
+                MessageBox.Show("Selecione um item para remover");
                 return;
             }
 

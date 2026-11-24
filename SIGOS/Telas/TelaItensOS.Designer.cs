@@ -101,9 +101,12 @@
             // 
             // dgvItensServico
             // 
+            this.dgvItensServico.AllowUserToAddRows = false;
             this.dgvItensServico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvItensServico.Location = new System.Drawing.Point(44, 123);
+            this.dgvItensServico.MultiSelect = false;
             this.dgvItensServico.Name = "dgvItensServico";
+            this.dgvItensServico.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvItensServico.Size = new System.Drawing.Size(704, 154);
             this.dgvItensServico.TabIndex = 25;
             this.dgvItensServico.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItensServico_CellContentClick);
@@ -149,6 +152,7 @@
             this.txtPrecoUnitario.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecoUnitario.Location = new System.Drawing.Point(482, 54);
             this.txtPrecoUnitario.Name = "txtPrecoUnitario";
+            this.txtPrecoUnitario.ReadOnly = true;
             this.txtPrecoUnitario.Size = new System.Drawing.Size(113, 23);
             this.txtPrecoUnitario.TabIndex = 15;
             // 

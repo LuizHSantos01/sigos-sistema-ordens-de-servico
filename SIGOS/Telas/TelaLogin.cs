@@ -27,14 +27,25 @@ namespace SIGOS.Telas
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             ConexaoBanco banco = new ConexaoBanco();
-            string sql = "SELECT * FROM usuarios " +"WHERE login = '" +
-                txtUsuario.Text + "'" +" AND senha_hash = '" + txtSenha.Text +
-                "'" +" AND ativo = 1";
 
-            MySqlDataReader dados = banco.TransacaoBusca(sql);
-
-            if (dados != null && dados.Read())
+            if (banco.conn == null)
             {
+                return;
+            }
+
+            string sql = "SELECT id FROM usuarios " + "WHERE login = @login AND senha_hash = SHA2(@senha, 256) AND ativo = 1";
+
+            MySqlCommand cmd = new MySqlCommand(sql, banco.conn);
+            cmd.Parameters.AddWithValue("@login", txtUsuario.Text);
+            cmd.Parameters.AddWithValue("@senha", txtSenha.Text);
+
+            MySqlDataReader dados = cmd.ExecuteReader();
+
+            if (dados.Read())
+            {
+                Sessao.IdUsuario = Convert.ToInt32(dados["id"]);
+                dados.Close();
+
                 MessageBox.Show("Bem vindo ao SIGOS");
                 TelaMenuPrincipal menu = new TelaMenuPrincipal();
                 menu.Show();
@@ -42,11 +53,9 @@ namespace SIGOS.Telas
             }
             else
             {
+                dados.Close();
                 MessageBox.Show("Usuario ou senha incorretos");
             }
-
-            //TelaMenuPrincipal telaMenuPrincipal = new TelaMenuPrincipal();
-            //telaMenuPrincipal.Show();
         }
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
