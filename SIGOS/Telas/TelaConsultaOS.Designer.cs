@@ -30,46 +30,47 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaConsultaOS));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.btnAlterarStatus = new System.Windows.Forms.Button();
+            this.cbNovoStatusOs = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dgvOs = new System.Windows.Forms.DataGridView();
+            this.dtpFimOS = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.dtpAberturaOS = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbStatusOs = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnLimparFormularioServico = new System.Windows.Forms.Button();
             this.btnSalvarServico = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPrecoUnitarioServico = new System.Windows.Forms.TextBox();
-            this.cbStatusServico = new System.Windows.Forms.ComboBox();
+            this.cbClienteOs = new System.Windows.Forms.ComboBox();
             this.lblDescricaoServico = new System.Windows.Forms.Label();
             this.lblAdicionarItens = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnMenuPrincipal = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOs)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Controls.Add(this.btnAlterarStatus);
+            this.panel1.Controls.Add(this.cbNovoStatusOs);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.dgvOs);
+            this.panel1.Controls.Add(this.dtpFimOS);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.dtpAberturaOS);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cbStatusOs);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnLimparFormularioServico);
             this.panel1.Controls.Add(this.btnSalvarServico);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtPrecoUnitarioServico);
-            this.panel1.Controls.Add(this.cbStatusServico);
+            this.panel1.Controls.Add(this.cbClienteOs);
             this.panel1.Controls.Add(this.lblDescricaoServico);
             this.panel1.Controls.Add(this.lblAdicionarItens);
             this.panel1.Location = new System.Drawing.Point(52, 160);
@@ -77,22 +78,54 @@
             this.panel1.Size = new System.Drawing.Size(796, 366);
             this.panel1.TabIndex = 27;
             // 
-            // dataGridView1
+            // btnAlterarStatus
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(44, 168);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(712, 127);
-            this.dataGridView1.TabIndex = 33;
+            this.btnAlterarStatus.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnAlterarStatus.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterarStatus.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAlterarStatus.Location = new System.Drawing.Point(44, 327);
+            this.btnAlterarStatus.Name = "btnAlterarStatus";
+            this.btnAlterarStatus.Size = new System.Drawing.Size(180, 34);
+            this.btnAlterarStatus.TabIndex = 36;
+            this.btnAlterarStatus.Text = "Alterar status";
+            this.btnAlterarStatus.UseVisualStyleBackColor = false;
             // 
-            // dateTimePicker1
+            // cbNovoStatusOs
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(544, 100);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(212, 22);
-            this.dateTimePicker1.TabIndex = 32;
+            this.cbNovoStatusOs.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbNovoStatusOs.FormattingEnabled = true;
+            this.cbNovoStatusOs.Location = new System.Drawing.Point(126, 300);
+            this.cbNovoStatusOs.Name = "cbNovoStatusOs";
+            this.cbNovoStatusOs.Size = new System.Drawing.Size(243, 23);
+            this.cbNovoStatusOs.TabIndex = 35;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(41, 301);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 17);
+            this.label5.TabIndex = 34;
+            this.label5.Text = "Novo Status";
+            // 
+            // dgvOs
+            // 
+            this.dgvOs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOs.Location = new System.Drawing.Point(44, 168);
+            this.dgvOs.Name = "dgvOs";
+            this.dgvOs.Size = new System.Drawing.Size(712, 127);
+            this.dgvOs.TabIndex = 33;
+            // 
+            // dtpFimOS
+            // 
+            this.dtpFimOS.CalendarFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFimOS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFimOS.Location = new System.Drawing.Point(544, 100);
+            this.dtpFimOS.Name = "dtpFimOS";
+            this.dtpFimOS.Size = new System.Drawing.Size(212, 22);
+            this.dtpFimOS.TabIndex = 32;
             // 
             // label4
             // 
@@ -125,14 +158,14 @@
             this.label3.TabIndex = 29;
             this.label3.Text = "Periodo";
             // 
-            // comboBox1
+            // cbStatusOs
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(44, 100);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(243, 23);
-            this.comboBox1.TabIndex = 28;
+            this.cbStatusOs.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbStatusOs.FormattingEnabled = true;
+            this.cbStatusOs.Location = new System.Drawing.Point(44, 100);
+            this.cbStatusOs.Name = "cbStatusOs";
+            this.cbStatusOs.Size = new System.Drawing.Size(243, 23);
+            this.cbStatusOs.TabIndex = 28;
             // 
             // label2
             // 
@@ -187,14 +220,14 @@
             this.txtPrecoUnitarioServico.Size = new System.Drawing.Size(313, 23);
             this.txtPrecoUnitarioServico.TabIndex = 14;
             // 
-            // cbStatusServico
+            // cbClienteOs
             // 
-            this.cbStatusServico.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbStatusServico.FormattingEnabled = true;
-            this.cbStatusServico.Location = new System.Drawing.Point(363, 53);
-            this.cbStatusServico.Name = "cbStatusServico";
-            this.cbStatusServico.Size = new System.Drawing.Size(393, 23);
-            this.cbStatusServico.TabIndex = 13;
+            this.cbClienteOs.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbClienteOs.FormattingEnabled = true;
+            this.cbClienteOs.Location = new System.Drawing.Point(363, 53);
+            this.cbClienteOs.Name = "cbClienteOs";
+            this.cbClienteOs.Size = new System.Drawing.Size(393, 23);
+            this.cbClienteOs.TabIndex = 13;
             // 
             // lblDescricaoServico
             // 
@@ -219,37 +252,16 @@
             this.lblAdicionarItens.Text = "Filtros de pesquisa";
             this.lblAdicionarItens.Click += new System.EventHandler(this.lblAdicionarItens_Click);
             // 
-            // comboBox2
+            // btnMenuPrincipal
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(126, 300);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(243, 23);
-            this.comboBox2.TabIndex = 35;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(41, 301);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 17);
-            this.label5.TabIndex = 34;
-            this.label5.Text = "Novo Status";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.MidnightBlue;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(44, 327);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 34);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "Alterar status";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnMenuPrincipal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuPrincipal.Location = new System.Drawing.Point(758, 38);
+            this.btnMenuPrincipal.Name = "btnMenuPrincipal";
+            this.btnMenuPrincipal.Size = new System.Drawing.Size(90, 40);
+            this.btnMenuPrincipal.TabIndex = 42;
+            this.btnMenuPrincipal.Text = "Menu";
+            this.btnMenuPrincipal.UseVisualStyleBackColor = true;
+            this.btnMenuPrincipal.Click += new System.EventHandler(this.btnMenuPrincipal_Click_1);
             // 
             // TelaConsultaOS
             // 
@@ -258,12 +270,13 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(907, 550);
+            this.Controls.Add(this.btnMenuPrincipal);
             this.Controls.Add(this.panel1);
             this.Name = "TelaConsultaOS";
             this.Text = "TelaConsultaOS";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOs)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -274,19 +287,20 @@
         private System.Windows.Forms.Button btnSalvarServico;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPrecoUnitarioServico;
-        private System.Windows.Forms.ComboBox cbStatusServico;
+        private System.Windows.Forms.ComboBox cbClienteOs;
         private System.Windows.Forms.Label lblDescricaoServico;
         private System.Windows.Forms.Label lblAdicionarItens;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbStatusOs;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLimparFormularioServico;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFimOS;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dtpAberturaOS;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.DataGridView dgvOs;
+        private System.Windows.Forms.Button btnAlterarStatus;
+        private System.Windows.Forms.ComboBox cbNovoStatusOs;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnMenuPrincipal;
     }
 }
